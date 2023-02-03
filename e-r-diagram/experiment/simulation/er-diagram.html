@@ -71,26 +71,25 @@ Author: Prakriti Dhang
 		
 			<!----------------------------------------Problem Statement Exercise 1-------------------------------------->
 
-				<div class="card border border-2 border-info p-2" id="exercise1" style="display:none;">
+				<div class="card border border-2 border-info p-2" id="exercise1" style="display:block;">
   <div class="card-body">
-	<label for="prob1" class="form-label fs-5" style="color: brown; font-weight: bold;">Draw a use case diagram for the following problem</label>
+	<label for="prob1" class="form-label fs-5" style="color: brown; font-weight: bold; text-align: justify;" >From the following problem statement identify the possible entity sets, their attributes, and relationships.</label>
   
-   <p class="fs-6">Consider a library, where a member can perform two operations: issue book and return it. 
-    A book is issued to a member only after verifying his credentials. Draw a use case diagram for the problem.</p>
+   <p class="fs-6" style="text-align: justify;" >SE VLabs Inc. is a young company with a few departments spread across the country. 
+    As of now, the company has a strength of 200+ employees.
 
+    Each employee works in a department. While joining, a person has to provide a lot of personal and professional 
+    details including name, address, phone #, mail address, date of birth, and so on. Once all these information are furnished, 
+    a unique ID is generated for each employee. He is then assigned a department in which he will work.
     
- 
+    There are around ten departments in the company. Unfortunately, two departments were given same names. However, 
+    departments too have ID's, which are unique.</p>
 
-<p class="fw-bold">Learning Ojectives:</p>  
- <ol>
-	<li>Identify the actors and use cases
-</li>
-<li>Associate the use cases with the actors by drawing a simple use case diagram
-</li>
+  
 
 
  </ol>
-<p><b>Limitations:</b> While extending a use case, extension points could not be defined through this interface.</p> 
+<p><b>Note:</b> Try to use the features of the interface provided to capture as much details as possible.</p> 
 
 
 </div> <!-- card body ended for exercise 1 problem statment-->
@@ -103,23 +102,25 @@ Author: Prakriti Dhang
 
 	<!------------------------------------------Exercise 1 -------------------------------------------->
 
-<div class="card border border-2 border-success p-2" id="ex1" style="display:none;">
+<div class="card border border-2 border-success p-2" id="ex1" style="display:block;">
   <div class="card-body">
     <div class="row">
     <div class="col-md-9" >
 
       <!--------------------------------------------------------------- Table 1---------------------------------------------------------------->
-      <label for="table1" class="form-label fs-6" style=" font-weight: bold;">Table #1: Add actors</label>
+      <label for="table1" class="form-label fs-6" style=" font-weight: bold;">Table #1: Add Entities</label>
       <form id="ftbl1"  class="p-2 bg-white px-4" action="">
       <div class="table-responsive">
     <table id="tbl1" class="table table-bordered  border border-1 border-info table-stripped">
       <thead>
         <th>Actors</th>
+        <th>Weak</th>
         <th>Add</th>
       </thead>
       <tbody>
         <tr>
           <td><input class="form-control border-primary " type="text" id="inp1" ></td>
+          <td><input class="border-primary" type="checkbox" id="inp2" ></td>
           <td style="text-align: center;"><button id="t1addbtn" class="btn btn-primary" type="button" onclick="addbtnt1()"  ><i class="bi bi-plus-lg"></i>Add</button></td>
         </tr>
       </tbody>
@@ -128,17 +129,26 @@ Author: Prakriti Dhang
    </div> <!-- table 1 responsive div ended for exercise 1-->
 </form>
 <!------------------------------------------------------------Table 2-------------------------------------------------------------------------->
-  <label for="table2" class="form-label fs-6" style=" font-weight: bold;">Table #2: Add use cases</label>
+  <label for="table2" class="form-label fs-6" style=" font-weight: bold;">Table #2: Add attributes for each entity</label>
   <form id="ftbl2"  class="p-2 bg-white px-4" action="">
     <div class="table-responsive">
   <table id="tbl2" class="table column-bordered-table table-bordered border border-1 border-info ">
     <thead>
-      <th>Use Case</th>
+      <th>Entity</th>
+      <th>Attribute</th>
+      <th>Primary Key</th>
       <th>Add</th>
     </thead>
     <tbody>
       <tr>
-        <td><input class="form-control border-primary " type="text" id="inp2" ></td>
+        <td>
+          <select id="selectentity" class="form-select float-center border border-2 border-primary" aria-label="Default select example" >
+           
+            
+          </select>
+        </td>
+        <td><input class="form-control border-primary " type="text" id="inp3" ></td>
+        <td><input class="border-primary" type="checkbox" id="inp4" ></td>
         <td  style="text-align: center;"><button id="t2addbtn" class="btn btn-primary" type="button" onclick="addbtnt2()" ><i class="bi bi-plus-lg"></i>Add</button></td>
       </tr>
     </tbody>
@@ -149,41 +159,40 @@ Author: Prakriti Dhang
   
 <!-------------------------------------------------------------- Table 3---------------------------------------------------------------------->
 
-<label for="table3" class="form-label fs-6" style=" font-weight: bold;">Table #3: Add relationship</label>
+<label for="table3" class="form-label fs-6" style=" font-weight: bold;">Table #3: Define relationship between two entities</label>
   <form id="ftbl3"  class="p-2 bg-white px-4" action="">
     <div class="table-responsive">
   <table id="tbl3" class="table table-bordered  border border-1 border-info table-stripped">
     <thead>
-      <th>From Actor / Use Case</th>
-      <th>Relationship</th>
-      <th>To Actor / Use Case</th>
-      <th>Label</th>
+      <th>Entity</th>
+      <th>Relation</th>
+      <th>Entity</th>
+      <th>Constraint</th>
       <th>Add</th>
      
     </thead>
     <tbody>
      <td>
-      <select id="selectactuc1" class="form-select float-center border border-2 border-primary" aria-label="Default select example" >
+      <select id="selectent31" class="form-select float-center border border-2 border-primary" aria-label="Default select example" >
         
         
       </select>
      </td>
      <td>
-      <select id="selectrel" class="form-select float-center border border-2 border-primary" aria-label="Default select example" >
-        <option value="Association" selected>Association</option>
-        <option value="Generalization">Generalization</option>
-        <option value="Include">Include</option>
-        <option value="Exclude">Exclude</option>
-        
-      </select>
+      <input class="form-control border-primary " type="text" id="inp5" >
      </td>
-     <td>
-      <select id="selectactuc2" class="form-select float-center border border-2 border-primary" aria-label="Default select example" >
+     <td><select id="selectent32" class="form-select float-center border border-2 border-primary" aria-label="Default select example" >
        
         
-      </select>
-     </td>
-     <td><input class="form-control border-primary " type="text" id="labelt3i" ></td>
+     </select></td>
+     
+     <td><select id="selectconst" class="form-select float-center border border-2 border-primary" aria-label="Default select example" >
+      <option value="mm" selected>Many to Many</option>
+      <option value="om">One to Many</option>
+      <option value="mo">Many to One</option>
+      <option value="oo">One to One</option>
+      
+    </select></td>
      <td style="text-align: center;"><button id="t3addbtn" class="btn btn-primary" type="button" onclick="addbtnt3()" ><i class="bi bi-plus-lg"></i>Add</button></td>
        
     </tbody>
@@ -194,28 +203,30 @@ Author: Prakriti Dhang
 
 <!----------------------------------------------------------------------- Table 4 ------------------------------------------------------------->
 
-<label for="table4" class="form-label fs-6" style=" font-weight: bold;">Table #4: List of actors and use casess</label>
+<label for="table4" class="form-label fs-6" style=" font-weight: bold;">Table #4: Entities and their attributes</label>
   <form id="ftbl4"  class="p-2 bg-white px-4" action="">
     <div class="table-responsive">
   <table id="tbl4" class="table table-bordered  border border-1 border-info ">
     <thead>
-      <th>Actor</th>
-      <th>Use Case</th>
+      <th>Entity</th>
+      <th>Attributes</th>
+      <th>Weak</th>
       
     </thead>
     <tbody>
       <tr>
         <td>
-          <ul id="actord">
+          <ul id="ent">
 
           </ul>
 
         </td>
         <td>
-        <ul id="usecased">
+        <ul id="attri">
             
           </ul>
         </td>
+        <td></td>
       </tr>
     </tbody>
 
@@ -225,16 +236,16 @@ Author: Prakriti Dhang
 
 
 <!---------------------------------------------------------------------- Table 5--------------------------------------------------------------->
-<label for="table5" class="form-label fs-6" style=" font-weight: bold;">Table #5: List of relationships</label>
+<label for="table5" class="form-label fs-6" style=" font-weight: bold;">Table #5: Relationships between entities</label>
 <form id="ftbl5"  class="p-2 bg-white px-4" action="">
 <div class="table-responsive">
 <table id="tbl5" class="table table-bordered  border border-1 border-info table-stripped">
   <thead>
-    <th>From Actor / Use Case</th>
-    <th>Relationship</th>
-    <th>To Actor / Use Case</th>
-    <th>Label</th>
-    <th>Remove</th>
+    <th>Entity</th>
+      <th>Relation</th>
+      <th>Entity</th>
+      <th>Constraint Type</th>
+      <th>Remove</th>
    
   </thead>
   <tbody id="tbodytbl5">
@@ -257,26 +268,32 @@ Author: Prakriti Dhang
 
 <div class="card border border-2 border-info p-2" id="exercise2" style="display:none;">
   <div class="card-body">
-	<label for="prob2" class="form-label fs-5" style="color: brown; font-weight: bold;">Draw a use case diagram for the following problem</label>
+	<label for="prob2" class="form-label fs-5" style="color: brown; font-weight: bold;">Draw an ER diagram for the following problem:</label>
   
-   <p class="fs-6">Consider your neighbouring travel agent from whom you can purchase flight tickets. To book a ticket you need to provide details about your journey i.e. on which date and at what time you would like to travel. You also need to provide your address. The agency has recently been modernized. So you can pay either by cash or by card. You can also cancel a booked ticket later if you decide to change your plan. In that case you need to book a new ticket again. Your agent also allows you to book a hotel along with flight ticket. 
-    While canceling a flight ticket you can also cancel hotel booking. 
-    Appropriate refund as per policy is made in case of cancellation.</p>
+   <p class="fs-6" style="text-align: justify;">The latest cab services agency in the city has approached you to develop a Cab Management System for them. 
+    They would be using this 
+    software to efficiently manage and track different cabs that are operated by them.
+
+    Cabs are solely owned by the agency. They hire people in contracts to drive the cabs. A cab can be uniquely identified by, 
+    like any other vehicle in the country, its license plate. A few different categories of cars are available from different manufacturers. 
+    And a few of them are AC cars.
+    
+    Cab drivers are given a identification card while joining. The ID card contains his name, permanent address, phone number, 
+    date of joining, duration of contract. Also, an unique alphanumeric code is assigned to each number.
+    
+    The agency provides service from 8 AM to 8 PM. Whenever any passenger books a cab, an available cab is allocated for him. 
+    The booking receipt given to the passenger contains the car #, source and destination places. Once he reaches the destination, 
+    he signs on a duplicate copy of the receipt and gives back to the driver. Driver must submit this duplicate copy signed by the 
+    passenger at the agency for confirmation.
+    
+    To evaluate their quality of service, the agency also wants a (optional) customer satisfaction survey, where passengers can 
+    provide feedback about their journey through the agency's website.</p>
 
     
  
 
-<p class="fw-bold">Learning Ojectives:</p>  
- <ol>
-	<li>Identify the use cases from a given non-trivial problem statement
-</li>
-<li>Identify the primary and secondary actors for a system
-</li>
-<li>Use to generalization of use cases and «include» stereotypes to prevent redundancy in the coding phase</li>
 
-
- </ol>
-<p><b>Limitations:</b> While extending a use case, extension points could not be defined through this interface.</p> 
+<p><b>Note:</b> This exercise is adapted from [2]</p> 
 
 
 </div> <!-- card body ended for exercise 2 problem statment-->
@@ -288,145 +305,157 @@ Author: Prakriti Dhang
 
 <!------------------------------------------Exercise 2 -------------------------------------------->
 
-<div class="card border border-2 border-success p-2" id="ex2" style="display:none;">
+<div class="card border border-2 border-success p-2" id="ex2" style="display:block;">
   <div class="card-body">
     <div class="row">
     <div class="col-md-9" >
 
       <!--------------------------------------------------------------- Table 1---------------------------------------------------------------->
-      <label for="table21" class="form-label fs-6" style=" font-weight: bold;">Table #1: Add actors</label>
+      <label for="table21" class="form-label fs-6" style=" font-weight: bold;">Table #1: Add Entities</label>
       <form id="ftbl21"  class="p-2 bg-white px-4" action="">
       <div class="table-responsive">
     <table id="tbl21" class="table table-bordered  border border-1 border-info table-stripped">
       <thead>
         <th>Actors</th>
+        <th>Weak</th>
         <th>Add</th>
       </thead>
       <tbody>
         <tr>
           <td><input class="form-control border-primary " type="text" id="inp21" ></td>
+          <td><input class="border-primary" type="checkbox" id="inp22" ></td>
           <td style="text-align: center;"><button id="t21addbtn" class="btn btn-primary" type="button" onclick="addbtnt21()"  ><i class="bi bi-plus-lg"></i>Add</button></td>
         </tr>
       </tbody>
  
     </table>
-   </div> <!-- table 1 responsive div ended for exercise 2-->
+   </div> <!-- table 1 responsive div ended for exercise 1-->
 </form>
 <!------------------------------------------------------------Table 2-------------------------------------------------------------------------->
-  <label for="table22" class="form-label fs-6" style=" font-weight: bold;">Table #2: Add use cases</label>
+  <label for="table22" class="form-label fs-6" style=" font-weight: bold;">Table #2: Add attributes for each entity</label>
   <form id="ftbl22"  class="p-2 bg-white px-4" action="">
     <div class="table-responsive">
   <table id="tbl22" class="table column-bordered-table table-bordered border border-1 border-info ">
     <thead>
-      <th>Use Case</th>
+      <th>Entity</th>
+      <th>Attribute</th>
+      <th>Primary Key</th>
       <th>Add</th>
     </thead>
     <tbody>
       <tr>
-        <td><input class="form-control border-primary " type="text" id="inp22" ></td>
+        <td>
+          <select id="selectentity2" class="form-select float-center border border-2 border-primary" aria-label="Default select example" >
+           
+            
+          </select>
+        </td>
+        <td><input class="form-control border-primary " type="text" id="inp23" ></td>
+        <td><input class="border-primary" type="checkbox" id="inp24" ></td>
         <td  style="text-align: center;"><button id="t22addbtn" class="btn btn-primary" type="button" onclick="addbtnt22()" ><i class="bi bi-plus-lg"></i>Add</button></td>
       </tr>
     </tbody>
 
   </table>
- </div> <!-- table 2 responsive div ended for exercise 2-->
+ </div> <!-- table 2 responsive div ended for exercise 1-->
 </form>
   
 <!-------------------------------------------------------------- Table 3---------------------------------------------------------------------->
 
-<label for="table23" class="form-label fs-6" style=" font-weight: bold;">Table #3: Add relationship</label>
+<label for="table23" class="form-label fs-6" style=" font-weight: bold;">Table #3: Define relationship between two entities</label>
   <form id="ftbl23"  class="p-2 bg-white px-4" action="">
     <div class="table-responsive">
   <table id="tbl23" class="table table-bordered  border border-1 border-info table-stripped">
     <thead>
-      <th>From Actor / Use Case</th>
-      <th>Relationship</th>
-      <th>To Actor / Use Case</th>
-      <th>Label</th>
+      <th>Entity</th>
+      <th>Relation</th>
+      <th>Entity</th>
+      <th>Constraint</th>
       <th>Add</th>
      
     </thead>
     <tbody>
      <td>
-      <select id="selectactuc21" class="form-select float-center border border-2 border-primary" aria-label="Default select example" onchange="selactuc21()">
+      <select id="selectentt31" class="form-select float-center border border-2 border-primary" aria-label="Default select example" >
         
         
       </select>
      </td>
      <td>
-      <select id="selectrel2" class="form-select float-center border border-2 border-primary" aria-label="Default select example" onchange="selrel2()">
-        <option value="Association" selected>Association</option>
-        <option value="Generalization">Generalization</option>
-        <option value="Include">Include</option>
-        <option value="Exclude">Exclude</option>
-        
-      </select>
+      <input class="form-control border-primary " type="text" id="inp5" >
      </td>
-     <td>
-      <select id="selectactuc22" class="form-select float-center border border-2 border-primary" aria-label="Default select example" onchange="selactuc22()">
+     <td><select id="selectentt32" class="form-select float-center border border-2 border-primary" aria-label="Default select example" >
        
         
-      </select>
-     </td>
-     <td><input class="form-control border-primary " type="text" id="labelt23i" ></td>
+     </select></td>
+     
+     <td><select id="selectconst2" class="form-select float-center border border-2 border-primary" aria-label="Default select example" >
+      <option value="mm" selected>Many to Many</option>
+      <option value="om">One to Many</option>
+      <option value="mo">Many to One</option>
+      <option value="oo">One to One</option>
+      
+    </select></td>
      <td style="text-align: center;"><button id="t23addbtn" class="btn btn-primary" type="button" onclick="addbtnt23()" ><i class="bi bi-plus-lg"></i>Add</button></td>
        
     </tbody>
 
   </table>
- </div> <!-- table 3 responsive div ended for exercise 2-->
+ </div> <!-- table 3 responsive div ended for exercise 1-->
 </form>
 
 <!----------------------------------------------------------------------- Table 4 ------------------------------------------------------------->
 
-<label for="tablew4" class="form-label fs-6" style=" font-weight: bold;">Table #4: List of actors and use casess</label>
+<label for="table24" class="form-label fs-6" style=" font-weight: bold;">Table #4: Entities and their attributes</label>
   <form id="ftbl24"  class="p-2 bg-white px-4" action="">
     <div class="table-responsive">
   <table id="tbl24" class="table table-bordered  border border-1 border-info ">
     <thead>
-      <th>Actor</th>
-      <th>Use Case</th>
+      <th>Entity</th>
+      <th>Attributes</th>
+      <th>Weak</th>
       
     </thead>
     <tbody>
       <tr>
         <td>
-          <ul id="actord2">
+          <ul id="ent">
 
           </ul>
 
         </td>
         <td>
-        <ul id="usecased2">
+        <ul id="attri">
             
           </ul>
         </td>
+        <td></td>
       </tr>
     </tbody>
 
   </table>
- </div> <!-- table 4 responsive div ended for exercise 2-->
+ </div> <!-- table 4 responsive div ended for exercise 1-->
 </form>
 
 
 <!---------------------------------------------------------------------- Table 5--------------------------------------------------------------->
-<label for="table25" class="form-label fs-6" style=" font-weight: bold;">Table #5: List of relationships</label>
+<label for="table25" class="form-label fs-6" style=" font-weight: bold;">Table #5: Relationships between entities</label>
 <form id="ftbl25"  class="p-2 bg-white px-4" action="">
 <div class="table-responsive">
 <table id="tbl25" class="table table-bordered  border border-1 border-info table-stripped">
   <thead>
-    <th>From Actor / Use Case</th>
-    <th>Relationship</th>
-    <th>To Actor / Use Case</th>
-    <th>Label</th>
-    <th>Remove</th>
+    <th>Entity</th>
+      <th>Relation</th>
+      <th>Entity</th>
+      <th>Constraint Type</th>
+      <th>Remove</th>
    
   </thead>
   <tbody id="tbodytbl25">
 
   </tbody>
 </table>
-</div> <!-- table 5 responsive div ended for exercise 2-->
+</div> <!-- table 5 responsive div ended for exercise 1-->
 
 <td  style="text-align: center;"><button id="drawbtn2" class="btn btn-primary" type="button" onclick="drawbtnex2()" ><i class="bi bi-paint-bucket"></i>Draw</button></td>
 </form>
@@ -437,7 +466,6 @@ Author: Prakriti Dhang
 </div>
 </div>
 </div>
-
 
 
   <!-------------------------------------------------------------Result Display----------------------------------------------------------------->
