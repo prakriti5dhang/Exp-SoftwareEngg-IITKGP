@@ -1,0 +1,41 @@
+{
+  "version": 2.0,
+  "questions": [
+    {
+      "question": "Functional requirements of a system are related to",
+      "answers": {
+        "a": "Using the system (by users) to get some meaningful work done",
+        "b": "How the system functions under different constraints ",
+        "c": "Whether they adhere to the organization policies "
+       
+      },
+     
+      "correctAnswer": "a",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "SRS refers to",
+      "answers": {
+        "a": "Software Requirements Specification ",
+        "b": "System Resources Statement",
+        "c": " Statement of Reliability of System",
+        "d": "Standard Requirements Statement "
+      },
+      
+      "correctAnswer": "a",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "The main objective behind preparing a SRS is to",
+      "answers": {
+        "a": "Let client and developers agree that they understand each other ",
+        "b": "Formally note down the requirements",
+        "c": "Estimate the cost of development ",
+        "d": "To judge whether the project could be undertaken  "
+      },
+      
+      "correctAnswer": "a",
+      "difficulty": "beginner"
+    }
+  ]
+}

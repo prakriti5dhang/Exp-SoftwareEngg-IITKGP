@@ -1,0 +1,41 @@
+{
+  "version": 2.0,
+  "questions": [
+    {
+      "question": "Domain Object Model is used to",
+      "answers": {
+        "a": "Build concept ",
+        "b": "Build the databases",
+        "c": "Construct the logical operations "
+       
+      },
+      
+      "correctAnswer": "a",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "Classes contain the same type objects – here the same type meansy",
+      "answers": {
+        "a": "Coming from the same sources ",
+        "b": "They are of same data type ",
+        "c": " They are using the same attributes and methods"
+       
+      },
+      
+      "correctAnswer": "c",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "List of potential objects can be made from a narrative problem statement by marking the",
+      "answers": {
+        "a": "Verbs from the problem statement",
+        "b": "Adjective from the problem statement",
+        "c": "Nouns from the problem statement",
+        "d": "None of the above "
+      },
+      
+      "correctAnswer": "c",
+      "difficulty": "beginner"
+    }
+  ]
+}

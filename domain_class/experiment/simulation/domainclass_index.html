@@ -1,0 +1,903 @@
+<!-- Redeveloped
+Lab: Software Engineering
+Exp:Identifying Domain Classes from the Problem Statements
+File Name: index.html
+Author: Prakriti Dhang
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+	
+    <link rel="stylesheet" href="./css/main.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+
+
+
+
+   
+</head>
+<body >
+  <header id="header">
+    <div class="container-fluid p-3 ">
+      <div class="card">
+      <div class="row">
+        <div class="col-md-2">
+        <img src="images/vlabs-logo.png" class=" rounded img-fluid" alt="vlabs-logo" >
+      </div>
+      <div class="col-md-8 p-4">
+        <p class="display-5 fw-bold text-primary text-center"> Virtual Lab IIT Kharagpur</p>
+      </div>
+      <div class="col-md-2">
+        <img src="images/iitkgp-logo.png" class=" rounded img-fluid" alt="iitkgplogo" >
+      </div>
+      </div>
+    </div>
+    </div>
+  </header>
+ 
+  <div class="container-fluid p-2 ">
+<hr>
+    <p class="h1 fw-bold fst-italic text-center" style="color: #000283;">Identifying Domain Classes from the Problem Statements</p>
+ <hr>
+</div>
+
+	<div class="container-fluid mt-2 p-3">
+		
+        <div class="d-flex flex-column justify-content-center mb-3 ">  
+				
+
+<div class="card border border-2 border-primary p-2">
+  <div class="card-body">
+	<label class="form-label fw-bold fs-5">Select a problem from the dropdown list shown below</label>
+   <select id="selectex" class="form-select float-center border border-2 border-primary" aria-label="Default select example" onchange="subex()">
+  <option value="0" selected>Exercise #</option>
+  <option value="1">1</option>
+  
+</select>
+<br>
+<button type="button" class="btn btn-primary" id="dispviewbtn" onclick="viewsolutionb()" disabled>Submit</button>
+
+  </div> <!-- card body ended for select exercise div-->
+</div> <!-- card ended for select exercise div-->
+
+		
+  
+
+		
+			<!----------------------------------------Problem Statement Exercise 1-------------------------------------->
+
+				<div class="card border border-2 border-info p-2" id="exercise1" style="display:none;">
+  <div class="card-body">
+	<label for="prob1" class="form-label fs-5" style="color: brown; font-weight: bold;">Identify the domain classes from the following problem statement</label>
+   <p class="fw-bold" style="text-align: justify;">The latest cab services agency in the city has approached you to develop a Cab Management System for them.
+     Following is the information they have given to implement the system.</p>
+   <p class="fs-6" style="text-align: justify;">Mr. Bose is the boss of this agency. Cabs are solely owned by the agency. 
+    They hire drivers to drive the cabs. Most of the cabs are without AC. However, a few comes with AC.</p>
+
+    <p class="fs-6" style="text-align: justify;">The agency provides service from 8 AM to 8 PM. Presently the service is limited only within Kolkata. Whenever any passenger books a cab, an available cab is allocated for him. 
+      A booking receipt is given to the passenger. He is then dropped to his home, office, or wherever he wants to go. 
+      In case the place is in too interior, the passenger is dropped at the nearest landmark. </p>
+    
+   <p class="fs-6" style="text-align: justify;">Payments are made to the drivers by cheque drawn at the local branch of At Your Risk Bank. 
+    All kind of finances required for the business are dealt with this bank.</p>
+    
+    <p class="fs-6" style="text-align: justify;">Recently Mr. Roy, neighbour of Mr. Bose, has given a proposal to book one of the cab in the morning everyday to drop his son to school, 
+      and drop him back to home later. Few other persons in the locality have also found the plan a good one.
+       Hence, Mr. Bose is planning to introduce this "Drop to school" plan also very soon.</p>
+ 
+
+<p class="fw-bold">Learning Ojectives:</p>  
+ <ol>
+	<li>Identifying potential classes (and their attributes) from a given problem statement
+</li>
+<li>Use expert knowledge on the subject matter to identify other relevant classes
+</li>
+
+ </ol>
+<p style="text-align: justify;"><b>Limitations:</b> The workspace provided is constrained to solve the current problem only. 
+  This is not a general user interface to solve any problem. 
+  Moreover, the classes generated at the end are some rudimentary classes and not necessarily the only classes possible. 
+  UML works in an iterative approach -- propose and refine. In fact, one may model the problem from a different perspective. 
+  The objective here is to provide an idea on how one should begin identifying potential candidate classes.</p> 
+
+
+</div> <!-- card body ended for exercise 1 problem statment-->
+</div> <!-- card ended for exercise 1 problem statement-->
+
+
+
+<!----------------------------------------Problem Statement Exercise 1 complete-------------------------------------->
+
+
+	<!------------------------------------------Exercise 1 -------------------------------------------->
+
+<div class="card border border-2 border-success p-2" id="ex1" style="display:block;">
+  <div class="card-body">
+    <div class="row">
+    <div class="col-md-9" >
+
+      <!--------------------------------------------------------------- Table 1---------------------------------------------------------------->
+      <label for="table1" class="form-label fs-6" style=" font-weight: bold;">Table #1: Add nouns / noun phrases identified from the problem statement</label>
+      <form id="ftbl1"  class="p-2 bg-white px-4" action="">
+      <div class="table-responsive">
+    <table id="tbl1" class="table table-bordered  border border-1 border-info table-stripped">
+      <thead>
+        <th>Noun / Noun phrase</th>
+        <th>Add</th>
+      </thead>
+      <tbody>
+        <tr>
+          <td><input class="form-control border-primary " type="text" id="inp1" ></td>
+          <td style="text-align: center;"><button id="t1addbtn" class="btn btn-primary" type="button" onclick="addbtnt1()"  ><i class="bi bi-plus-lg"></i>Add</button></td>
+        </tr>
+      </tbody>
+ 
+    </table>
+   </div> <!-- table 1 responsive div ended for exercise 1-->
+</form>
+<!------------------------------------------------------------Table 2-------------------------------------------------------------------------->
+  <label for="table2" class="form-label fs-6" style=" font-weight: bold;">Table #2: Categorization of the above identified nouns (Ross's method)</label>
+  <form id="ftbl2"  class="p-2 bg-white px-4" action="">
+    <div class="table-responsive">
+  <table id="tbl2" class="table column-bordered-table table-bordered border border-1 border-info ">
+    <thead>
+      <th>Potential objects</th>
+      <th>Category</th>
+      <th>Add</th>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <section>
+            <ul id="potobjlist">
+          
+            </ul>
+          </section>
+      
+        </td>
+        <td rowspan="3"><select id="selectcat" class="form-select float-center border border-1 border-primary" aria-label="Default select example" >
+          <option value="0">Concept</option>
+          <option value="1">Event</option>
+          <option value="2">Organization</option>
+          <option value="3">People</option>
+          <option value="4">Place</option>
+          <option value="5">Redundant</option>
+          <option value="6" selected>Things</option>
+          
+        </select></td>
+        <td rowspan="3" style="text-align: center;"><button id="t2addbtn" class="btn btn-primary" type="button" onclick="addbtnt2()" ><i class="bi bi-plus-lg"></i>Add</button></td>
+      </tr>
+    </tbody>
+
+  </table>
+ </div> <!-- table 2 responsive div ended for exercise 1-->
+</form>
+  
+<!-------------------------------------------------------------- Table 3---------------------------------------------------------------------->
+
+<label for="table3" class="form-label fs-6" style=" font-weight: bold;">Table #3: List of categorized nouns (potential objects)</label>
+  <form id="ftbl3"  class="p-2 bg-white px-4" action="">
+    <div class="table-responsive">
+  <table id="tbl3" class="table table-bordered  border border-1 border-info table-stripped">
+    <thead>
+      <th>Place</th>
+      <th>People</th>
+      <th>Things</th>
+      <th>Organization</th>
+      <th>Concept</th>
+      <th>Event</th>
+      <th>Redundant</th>
+
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <section>
+            <ul id="placet3">
+          
+            </ul>
+          </section>
+        </td>
+        <td>
+          <section>
+            <ul id="peoplet3">
+          
+            </ul>
+          </section>
+        </td>
+        <td>
+          <section>
+            <ul id="thingst3">
+          
+            </ul>
+          </section>
+        </td>
+        <td>
+          <section>
+            <ul id="orgt3">
+          
+            </ul>
+          </section>
+        </td>
+        <td>
+          <section>
+            <ul id="conceptt3">
+          
+            </ul>
+          </section>
+        </td>
+        <td>
+          <section>
+            <ul id="eventt3">
+          
+            </ul>
+          </section>
+        </td>
+        <td>
+          <section>
+            <ul id="reduntt3">
+          
+            </ul>
+          </section>
+        </td>
+      </tr>
+    </tbody>
+
+  </table>
+ </div> <!-- table 3 responsive div ended for exercise 1-->
+</form>
+
+<!----------------------------------------------------------------------- Table 4 ------------------------------------------------------------->
+
+<label for="table4" class="form-label fs-6" style=" font-weight: bold;">Table #4: Identify attribute(s) for objects</label>
+  <form id="ftbl4"  class="p-2 bg-white px-4" action="">
+    <div class="table-responsive">
+  <table id="tbl4" class="table table-bordered  border border-1 border-info table-stripped">
+    <thead>
+      <th>Object</th>
+      <th>Attributes</th>
+      <th>Add</th>
+      
+
+    </thead>
+    <tbody>
+      <tr>
+        <td><select id="selectobj" class="form-select float-center border border-1 border-primary" aria-label="Default select example" onchange="selecobj()">
+          
+        </select></td>
+        <td>
+          
+          <ul id="addattrit4">
+            <li>
+              <div class="form-check">
+              <input class="form-check-input" type="checkbox" name="attriselect" value="Address" id="tb4a1">
+              <label class="form-check-label" for="tb4a1">
+                Address
+              </label>
+            </div>
+          </li>
+          
+            <li><div class="form-check">
+              <input class="form-check-input" type="checkbox" name="attriselect" value="Color" id="tb4a2">
+              <label class="form-check-label" for="tb4a2">
+                Color
+              </label>
+            </div></li>
+            <li>
+              <div id="optiona1" class="form-check">
+                <input class="form-check-input" type="checkbox" name="attriselect" value="Cost" id="tb4a3">
+                <label class="form-check-label" for="tb4a3">
+                  Cost
+                </label>
+              </div>
+            </li>
+            <li>
+              <div id="optiona1" class="form-check">
+                <input class="form-check-input" type="checkbox" name="attriselect" value="Height" id="tb4a4">
+                <label class="form-check-label" for="tb4a4">
+                  Height
+                </label>
+              </div>
+            </li>
+            <li>
+              <div id="optiona1" class="form-check">
+                <input class="form-check-input" type="checkbox" name="attriselect" value="Name" id="tb4a5">
+                <label class="form-check-label" for="tb4a5">
+                  Name
+                </label>
+              </div>
+            </li>
+            <li>
+              <div id="optiona1" class="form-check">
+                <input class="form-check-input" type="checkbox" name="attriselect" value="Serial Number" id="tb4a6">
+                <label class="form-check-label" for="tb4a6">
+                  Serial Number
+                </label>
+              </div>
+            </li>
+            <li>
+              <div id="optiona1" class="form-check">
+                <input class="form-check-input" type="checkbox"  name="attriselect" value="Time" id="tb4a7">
+                <label class="form-check-label" for="tb4a7">
+                  Time
+                </label>
+              </div>
+            </li>
+            <li>
+              <div id="optiona1" class="form-check">
+                <input class="form-check-input" type="checkbox" name="attriselect" value="Weight" id="tb4a8">
+                <label class="form-check-label" for="tb4a8">
+                  Weight
+                </label>
+              </div>
+            </li>
+          </ul>
+          
+        </td>
+        <td style="text-align: center;"><button id="t4addbtn" class="btn btn-primary" type="button" onclick="addbtnt4()" ><i class="bi bi-plus-lg"></i>Add</button</td>
+        
+      </tr>
+    </tbody>
+
+  </table>
+ </div> <!-- table 4 responsive div ended for exercise 1-->
+</form>
+
+
+<!---------------------------------------------------------------------- Table 5--------------------------------------------------------------->
+<label for="table5" class="form-label fs-6" style=" font-weight: bold;">Table #5: Add other possibile attribute(s) [Optional]</label>
+<form id="ftbl5"  class="p-2 bg-white px-4" action="">
+<div class="table-responsive">
+<table id="tbl5" class="table table-bordered  border border-1 border-info table-stripped">
+<thead>
+  <th>Attribute</th>
+  <th>Add</th>
+</thead>
+<tbody>
+  <tr>
+    <td><input class="form-control border-primary " type="text" id="inp2" ></td>
+    <td style="text-align: center;"><button id="t5addbtn" class="btn btn-primary" type="button" onclick="addbtnt5()" ><i class="bi bi-plus-lg"></i>Add</button></td>
+  </tr>
+</tbody>
+
+</table>
+</div> <!-- table 5 responsive div ended for exercise 1-->
+</form>
+<!--------------------------------------------------------------------Table 6------------------------------------------------------------------>
+<label for="table6" class="form-label fs-6" style=" font-weight: bold;">Table #6: List of objects and it's attribute(s)</label>
+<form id="ftbl6"  class="p-2 bg-white px-4" action="">
+<div class="table-responsive">
+<table id="tbl6" class="table table-bordered  border border-1 border-info table-stripped">
+<thead>
+  <th>Object</th>
+  <th>Attribute</th>
+  
+</thead>
+<tbody>
+  <tr>
+    <td></td>
+    <td></td>
+  </tr>
+</tbody>
+
+</table>
+</div> <!-- table 6 responsive div ended for exercise 1-->
+</form>
+
+
+<!-------------------------------------------------------------------- Table 7 ----------------------------------------------------------------->
+
+<label for="table7" class="form-label fs-6" style=" font-weight: bold;">Table #7: Define classes from list of attribute(s)</label>
+  <form id="ftbl7"  class="p-2 bg-white px-4" action="">
+    <div class="table-responsive">
+  <table id="tbl7" class="table table-bordered  border border-1 border-info table-stripped">
+    <thead>
+      
+      <th>Attributes</th>
+      <th>Class</th>
+      <th>Add</th>
+      
+
+    </thead>
+    <tbody>
+      <tr>
+        
+        <td>
+         
+            <ul id="t7attri">
+              <li>
+                <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="attricheck" value="Address" id="tb4a1">
+                <label class="form-check-label" for="tb4a1">
+                  Address
+                </label>
+              </div>
+            </li>
+            
+              <li><div class="form-check">
+                <input class="form-check-input" type="checkbox" name="attricheck" value="Color" id="tb4a2">
+                <label class="form-check-label" for="tb4a2">
+                  Color
+                </label>
+              </div></li>
+              <li>
+                <div id="optiona1" class="form-check">
+                  <input class="form-check-input" type="checkbox" name="attricheck" value="Cost" id="tb4a3">
+                  <label class="form-check-label" for="tb4a3">
+                    Cost
+                  </label>
+                </div>
+              </li>
+              <li>
+                <div id="optiona1" class="form-check">
+                  <input class="form-check-input" type="checkbox" name="attricheck" value="Height" id="tb4a4">
+                  <label class="form-check-label" for="tb4a4">
+                    Height
+                  </label>
+                </div>
+              </li>
+              <li>
+                <div id="optiona1" class="form-check">
+                  <input class="form-check-input" type="checkbox" name="attricheck" value="Name" id="tb4a5">
+                  <label class="form-check-label" for="tb4a5">
+                    Name
+                  </label>
+                </div>
+              </li>
+              <li>
+                <div id="optiona1" class="form-check">
+                  <input class="form-check-input" type="checkbox" vname="attricheck" alue="Serial Number" id="tb4a6">
+                  <label class="form-check-label" for="tb4a6">
+                    Serial Number
+                  </label>
+                </div>
+              </li>
+              <li>
+                <div id="optiona1" class="form-check">
+                  <input class="form-check-input" type="checkbox" name="attricheck" value="Time" id="tb4a7">
+                  <label class="form-check-label" for="tb4a7">
+                    Time
+                  </label>
+                </div>
+              </li>
+              <li>
+                <div id="optiona1" class="form-check">
+                  <input class="form-check-input" type="checkbox" name="attricheck" value="Weight" id="tb4a8">
+                  <label class="form-check-label" for="tb4a8">
+                    Weight
+                  </label>
+                </div>
+              </li>
+            </ul>
+          
+       
+        </td>
+
+      <td><input class="form-control border-primary " type="text" id="inp3" ></td>
+        <td style="text-align: center;"><button id="t7addbtn" class="btn btn-primary" type="button" onclick="addbtnt7()" ><i class="bi bi-plus-lg"></i>Add</button</td>
+        
+      </tr>
+    </tbody>
+
+  </table>
+ </div> <!-- table 7 responsive div ended for exercise 1-->
+</form>
+
+<!--------------------------------------------------------------- Table 8---------------------------------------------------------------------->
+<label for="table8" class="form-label fs-6" style=" font-weight: bold;">Table #8: List of classes and their attribute(s)</label>
+<form id="ftbl8"  class="p-2 bg-white px-4" action="">
+<div class="table-responsive">
+<table id="tbl8" class="table table-bordered  border border-1 border-info table-stripped">
+<thead>
+  <th>Classes</th>
+  <th>Attribute</th>
+  
+</thead>
+<tbody id="tbodytbl8">
+
+</tbody>
+
+</table>
+</div> <!-- table 8 responsive div ended for exercise 1-->
+</form>
+
+<!------------------------------------- Table 9---------------------------------->
+<label for="table9" class="form-label fs-6" style=" font-weight: bold;">Table #9: Add any other relevant class (based on domain knowledge) [Optional]</label>
+      <form id="ftbl9"  class="p-2 bg-white px-4" action="">
+      <div class="table-responsive">
+    <table id="tbl9" class="table table-bordered  border border-1 border-info table-stripped">
+      <thead>
+        <th>Additional Class</th>
+        <th>Add</th>
+      </thead>
+      <tbody>
+        <tr>
+          <td><input class="form-control border-primary " type="text" id="inp4" ></td>
+          <td style="text-align: center;"><button id="t9addbtn" class="btn btn-primary" type="button" onclick="addbtnt9()" ><i class="bi bi-plus-lg"></i>Add</button></td>
+        </tr>
+      </tbody>
+ 
+    </table>
+   </div> <!-- table 9 responsive div ended for exercise 1-->
+</form>
+
+<button id="tlcbtn" class="btn btn-primary p-2" type="button" onclick="btntlc()" ><i class="bi bi-paint-bucket"></i>Top Level Classes</button>
+<br>
+<!----------------------------------------------------------------- Table 10--------------------------------------------------------------->
+<label for="table10" class="form-label fs-6 p-2" style=" font-weight: bold;">Table #10: List of top level classes</label>
+      <form id="ftbl10"  class="p-2 bg-white px-4" action="">
+      <div class="table-responsive">
+    <table id="tbl10" class="table table-bordered  border border-1 border-info table-stripped">
+      <thead>
+        <th>Class</th>
+        <th>Objects</th>
+      </thead>
+      <tbody>
+        <tr>
+          <td id="t10class"></td>
+          <td id="t10obj"></td>
+        </tr>
+      </tbody>
+ 
+    </table>
+   </div> <!-- table 9 responsive div ended for exercise 1-->
+</form>
+
+    </div> <!-- column ended for exercise 1-->
+</div> <!--row ended for exrcise 1-->
+</div> <!--card body ended for exrcise 1-->
+</div> <!--card ended for exrcise 1-->
+ 
+  <!-------------------------------------------------------------Result Display----------------------------------------------------------------->
+
+
+				<div class="card border border-2 border-warning p-2" id="dispres" style="display:none;">
+  <div class="card-body">
+	<label for="result" class="form-label fs-4" style="color: brown; font-weight: bold;">Result</label>
+   <div style="font-size: medium;" id="show_result" class="divscroll " style=" display: none;" >
+    <p class="h6">From the given problem statement we can identify the following nouns and noun phrases:</p>
+  <div class="table-responsive">
+    <table class="table   border border-1 border-info ">
+<thead>
+  <th colspan="6">Noun and Noun Phrases</th>
+</thead>
+<tbody>
+  <tr>
+    <td>
+      <ul>
+        <li>Mr Bose</li>
+        <li>boss</li>
+        <li>agency</li>
+        <li>Cabs</li>
+        <li>drivers</li>
+        <li>AC</li>
+       
+      </ul>
+    </td>
+    <td>
+      <ul>
+        <li>service</li>
+        <li>Kolkata</li>
+        <li>passenger</li>
+        <li>booking receipt</li>
+        <li>home</li>
+        <li>office</li>
+       
+      </ul>
+    </td>
+    <td>
+      <ul>
+        <li>place</li>
+        <li>landmark</li>
+        <li>Payments</li>
+        <li>cheque</li>
+        <li>branch</li>
+        <li>At Your Risk Bank</li>
+       
+      </ul>
+    </td>
+    <td>
+      <ul>
+        <li>finances</li>
+        <li>business</li>
+        <li>bank</li>
+        <li>Mr Roy</li>
+        <li>morning</li>
+        <li>everyday</li>
+       
+      </ul>
+    </td>
+    <td>
+      <ul>
+        <li>son</li>
+        <li>school</li>
+        <li>persons</li>
+        <li>locality</li>
+        <li>plan</li>
+        <li>Drop to school</li>
+       
+      </ul>
+    </td>
+    <td>
+      <ul>
+        <li>neighbour</li>
+      
+       
+      </ul>
+    </td>
+  </tr>
+</tbody>
+    </table>
+  </div> <!--table responsive div ended for result display-->
+<p class="h6"> Let us put the above into different categories.</p>
+  <div class="table-responsive">
+    <table class="table border table-bordered  border border-1 border-info ">
+<thead>
+  <th>People</th>
+  <th>Places</th>
+  <th>Things</th>
+  <th>Organizations</th>
+  <th>Concepts</th>
+  <th>Events</th>
+</thead>
+<tbody>
+  <tr>
+    <td>
+      <ul>
+        <li>Mr Bose</li>
+        <li>boss</li>
+        <li>drivers</li>
+        <li>passenger</li>
+        <li>Mr Roy</li>
+        <li>son</li>
+        <li>persons</li>
+        <li>neighbour</li>
+       
+      </ul>
+    </td>
+    <td>
+      <ul>
+        <li>Kolkata</li>
+        <li>home</li>
+        <li>office</li>
+        <li>place</li>
+        <li>landmark</li>
+        <li>branch</li>
+        <li>locality</li>
+       
+      </ul>
+    </td>
+    <td>
+      <ul>
+        <li>Cabs</li>
+        <li>AC</li>
+        <li>booking receipt</li>
+        <li>cheque</li>
+      
+       
+      </ul>
+    </td>
+    <td>
+      <ul>
+        <li>agency</li>
+        <li>At Your Risk Bank</li>
+        <li>bank</li>
+        <li>school</li>
+        
+       
+      </ul>
+    </td>
+    <td>
+      <ul>
+        <li>service</li>
+        <li>Payments</li>
+        <li>finances</li>
+        <li>business</li>
+        <li>plan</li>
+        
+       
+      </ul>
+    </td>
+    <td>
+      <ul>
+        <li>morning</li>
+        <li>everyday</li>
+        <li>Drop to school</li>
+      
+       
+      </ul>
+    </td>
+  </tr>
+</tbody>
+    </table>
+  </div> <!-- table responsive div  ended -->
+  <p>The nouns and noun phrases in the problem statement gives us a list of 31 potential classes.
+     However, all of them may not be relevant. For example, 'Moning' is not something related to the Cab Management System. 
+     And so is 'Everyday'. In a similar way, 'Service', 'Plan', 'Agency', 'AC', 'Locality', and 'Business' doesn't seem to be 
+     potential classes in this context. 
+    So, we may avoid to assign any attributes for those entries.</p>
+  
+    <p>We need to assign some attributes for rest of the potential classes. 
+      For example, 'Mr Roy' may assigned attributes 'Adress', 'Height', 'Name', and 'Weight'. 
+      In addission to these, 'Customer id', may be consider as an attribute for 'Mr Roy', as, Mr Roy may be treated as a potential Customer 
+      for our Cab Management System. 
+      Similarly, we can assign attribute 'Employee id' with 'Adress', 'Height', 'Name', and 'Weight' for the potential class 'Drivers'.</p>
+
+      <p class="h6">These are the probable classes with their associated properties</p>
+
+      <div class="table-responsive">
+        <table class="table border table-bordered  border border-1 border-info ">
+    <thead>
+      <th>Person</th>
+      <th>Employee</th>
+      <th>Customer</th>
+      <th>Place</th>
+      <th>Cab</th>
+      <th>Booking</th>
+      <th>Bank</th>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <ul>
+            <li>Name</li>
+            <li>Address</li>
+            <li>Height</li>
+            <li>Weight</li>
+         
+           
+          </ul>
+        </td>
+        <td>
+          <li>Name</li>
+          <li>Emlpoyee id</li>
+          <li>Address</li>
+          <li>Height</li>
+          <li>Weight</li>
+         
+           
+          </ul>
+        </td>
+        <td>
+          <ul>
+            <li>Name</li>
+            <li>Customer id</li>
+            <li>Address</li>
+            <li>Height</li>
+            <li>Weight</li>
+           
+          
+           
+          </ul>
+        </td>
+        <td>
+          <ul>
+            <li>Address</li>
+            
+           
+          </ul>
+        </td>
+        <td>
+          <ul>
+            <li>Color</li>
+            <li>Cost</li>
+            <li>Has AC</li>
+            <li>Weight</li>
+            
+            
+           
+          </ul>
+        </td>
+        <td>
+          <ul>
+            <li>Time</li>
+            <li>Customer</li>
+            <li>Starting Place</li>
+            <li>Destination</li>
+          
+           
+          </ul>
+        </td>
+        <td>
+          <ul>
+            <li>Address</li>
+            <li>Branch</li>
+            <li>Name</li>
+            
+          
+           
+          </ul>
+        </td>
+      </tr>
+    </tbody>
+        </table>
+      </div> <!-- table responsive div  ended -->
+
+
+
+      <p>According to the properties assigned to 'Mr Roy' and 'Drivers', Mr Roy will be an object of 'Customer' class and 'Drivers' will be an object of 'Emloyee' class.
+</p>
+       <p>Although not explicitly mentioned in the problem statement, based on knowledge in related area one may point out few other potential classes with their following properties:</p>
+
+
+
+       <div class="table-responsive">
+        <table class="table border table-bordered  border border-1 border-info ">
+    <thead>
+      <th>Transaction</th>
+      <th>Payment</th>
+    
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <ul>
+            <li>Transaction id</li>
+            <li>Parties involved</li>
+            <li>Time</li>
+           
+         
+           
+          </ul>
+        </td>
+        <td>
+          <li>Amount</li>
+          <li>Name of Payee</li>
+          <li>Serial number</li>
+         
+         
+           
+          </ul>
+        </td>
+
+</tr>
+</tbody>
+</table>
+</div>
+
+<p class="h6">For the given problem related to Cab Management System, one may conclude the final list of classes as :</p>
+
+<ul>
+  <li>Person</li>
+  <li>Employee</li>
+  <li>Customer</li>
+  <li>Place</li>
+  <li>Cab</li>
+  <li>Booking</li>
+  <li>Bank</li>
+  <li>Transaction</li>
+  <li>Payment</li>
+</ul>
+
+
+ <button type="button" class="btn btn-info border-primary" id="viewsol" onclick="solview()" disabled>View Solution</button>
+</div>
+</div> <!-- Card body ended for result display-->
+</div> <!-- Card  ended for result display-->
+
+			
+			
+</div> <!--- d-Flex ended-->
+  </div> <!-- container-fluid ended-->
+
+  
+  <footer class="text-white text-center ">
+   
+    <div class="text-center text-white fs-5 bg-primary "  >
+      Copyright © 2023  IIT Kharagpur,
+      <a class="text-white fs-5" href="http://vlabs.iitkgp.ac.in/">Virtual Lab</a>
+    </div>
+ 
+    </footer>
+    
+  
+   
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,156 @@
+<!--Redeveloped
+Lab: Software Engineering
+Exp:Estimation of Project Metrics
+File Name: index1.html
+Author: Prakriti Dhang -->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- Add CSS at the head of HTML file -->
+    <link rel="stylesheet" href="./css/main.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!--link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css"-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+    <!--link rel="styleshee" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"-->
+    <link rel="stylesheet" href="./css/css/fontawesome.css">
+    <link rel="stylesheet" href="./css/css/all.min.css">
+    
+   
+
+
+
+
+"
+</head>
+<body>
+    <header id="header">
+        <div class="container p-3">
+          <div class="card">
+          <div class="row">
+            <div class="col-md-2">
+            <img src="images/vlabs-logo.png" class=" rounded img-fluid" alt="vlabs-logo" >
+          </div>
+          <div class="col-md-8 p-4">
+            <p class="h2 fw-bold text-primary text-center"> Virtual Lab IIT Kharagpur</p>
+          </div>
+          <div class="col-md-2">
+            <img src="images/iitkgp-logo.png" class=" rounded img-fluid" alt="iitkgplogo" >
+          </div>
+          </div>
+        </div>
+        </div>
+      </header>
+
+      <div class="container p-2">
+        <hr>
+        <p class="h3 fw-bold fst-italic text-center" style="color: #000283;"> E-R Modeling from the Problem Statements</p>
+        <hr>
+    </div>
+
+    <div class="container mt-2 p-3">
+		
+        <div class="d-flex flex-column justify-content-center mb-3 ">  
+            <div class="row">
+                <div class="col-md-4">
+                   <p class="fs-5 fw-bold" style="color: brown;">Draw an ER diagram for a School Management System based on the following information.</p>
+                   <p style="text-align: justify;"> You have been asked to implement a database for a school management system (SMS). This primarily consists of 
+                    maintaining students' information like name, address, date of birth, roll number, deparment, and so on. 
+                    Details about the school to be stored includes school's name, location. Although it is unlikely that there
+                     would be two schools at the same place with same name, 
+                    but our SMS would like to accomodate this possibility.
+                   </p>
+                   <p style="text-align: justify;">Faculty members works in the school. They teaches the students. A faculty member normally teaches multiple
+                     students at a time. Also, he can teach multiple courses to the students.</p>
+                </div>
+               
+                <div class="col-md-8">
+                  
+                  <div class="p-2 border-start" >
+                    <div class="card-body">
+                    <!--div class="main"-->
+                    <div  class="card card-body border border-1 border-info" id="p1">
+                     
+                        <h5 id="head1" class="card-title fs-5 fw-bold border border-3 border-primary rounded-3 p-2" style="text-align: center; background: linear-gradient(to bottom right, #ccffff 0%, #ffffff 99%);">E R Diagram for School Management System</h5>
+                      </div>     
+                      <div class="d-flex bd-highlight">
+                       
+                        <div class="card card-body border border-2 border-primary p-1  d-grid gap-2  "> 
+                          <p class="fs-5 fw-bold" style="text-align: center;">Step</p>
+                          <button type="button" class="btn border border-4 border-primary rounded-5" style="background-color:#ccffff;" onclick="gostep1()">
+                          <i class="fa-solid fa-square-1" >1</i></button>
+                          <button type="button" class="btn border border-4 border-primary rounded-5" style="background-color:#ccffff;" onclick="gostep2()">
+                            <i class="fa-solid fa-square-2" >2</i></button>
+                          <button type="button" class="btn border border-4 border-primary rounded-5" style="background-color:#ccffff; " onclick="gostep3()">
+                              <i class="fa-solid fa-square-3" >3</i></button>
+                          <button type="button" class="btn  border border-4 border-primary rounded-5" style="background-color:#ccffff;" onclick="gostep4()">
+                                <i class="fa-solid fa-square-4" >4</i></button>
+                          <button type="button" class="btn border border-4 border-primary rounded-5" style="background-color:#ccffff;" onclick="gostep5()">
+                                  <i class="fa-solid fa-square-5" >5</i></button>
+                        </div>
+
+                        <div class=" card card-body border border-2 border-primary p-2 flex-grow-1 ">
+                          <p class="fs-5" style="display:block;">We will follow the steps shown below to draw the ER diagram </p>
+                           <ol class="fs-5  list-group-numbered">
+                            <li class="list-group-item" id="s1" style="display:block;">Identify sets and their attributes</li>
+                            <li class="list-group-item" id="s2" style="display:block;">Draw the entities</li>
+                            <li class="list-group-item" id="s3" style="display:block;">Identify relationships</li>
+                            <li class="list-group-item" id="s4" style="display:block;">Draw the relationships</li>
+                            <li class="list-group-item" id="s5" style="display:block;">Identify mapping cardinalities and represent them.</li>
+                           </ol>
+                       
+                       
+                        </div>
+                        
+                      </div>
+                      <!--div class="row">
+                        <div class="col-md-1">
+                      <div class="card card-body">
+                        
+                      </div>
+                        </div>
+                        <div class="col-md-11">
+                          <div class="card card-body"></div>
+                        </div>
+                      </div-->
+
+
+<!--/div-->
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-center border border-1 border-info" style="background: linear-gradient(to bottom right, #ccffff 0%, #ffffff 99%);">
+                    
+                      <button type="button" class="btn btn-primary" onclick="replaybtn()" style="display:block;">
+                        <i class="fas fa-redo"></i></button>
+                    <button type="button" class="btn btn-primary" onclick="goback()" style="display:block;">
+                      <i class="fas fa-chevron-left fa-lg"></i></button>
+                    <button id="playbtn" type="button" class="btn btn-primary" onclick="playsimulation()"><i class="fas fa-play fa-sm "></i></button>
+                    <!--i class="fa-solid fa-play"></i-->
+                    <button type="button" class="btn btn-primary " onclick="gonext()" style="display:block;"><i class="fas fa-chevron-right fa-lg"></i></button>
+               
+                  </div>
+                </div>
+              </div>
+                </div>
+            </div>
+            <hr>
+            <p>For a given problem at first we identify the actors. This can be by following the steps as mentioned in the theory section. Once actors have been identified, we they make use of the system and thus, identify the use cases.</p>
+            <a class="btn btn-success fs-4" target="_blank" href="./er-diagram.html" role="button">Click Here to Go to Exercise Page</a>
+            <hr>    
+        </div>
+            </div>
+
+
+            <footer class="text-white text-center ">
+                <div class="text-center text-primary fs-5 "  >
+                  Copyright © 2023  IIT Kharagpur,
+                  <a class="text-primary fs-5" href="http://vlabs.iitkgp.ac.in/">Virtual Lab</a>
+                </div>
+                </footer>
+
+</script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/simulation.js"></script>
+</body>
+</html>

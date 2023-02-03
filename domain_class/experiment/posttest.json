@@ -1,0 +1,38 @@
+{
+  "version": 2.0,
+  "questions": [
+    {
+      "question": "My pet, Jimmy is",
+      "answers": {
+        "a": "A specialization of class Pet",
+        "b": "An instance of class Pet ",
+        "c": " None of the above "
+      },
+      
+      "correctAnswer": "c",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "All the potential objects we get by using noun method must be into the scope of solution space",
+      "answers": {
+        "a": "True",
+        "b": "False"
+       
+      },
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "What does merging of parallel activities indicate?",
+      "answers": {
+        "a": "At least one of the acitivities should be completed before doing the next activity ",
+        "b": "At most one activity could be left over before proceeding with the next activity",
+        "c": "All the parallel activities must be completed before performing the next activity ",
+        "d": "None of the above"
+       
+      },
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    }
+  ]
+}

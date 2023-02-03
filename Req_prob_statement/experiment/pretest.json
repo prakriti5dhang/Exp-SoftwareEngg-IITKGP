@@ -1,0 +1,41 @@
+{
+  "version": 2.0,
+  "questions": [
+    {
+      "question": "When is feasibility study done?",
+      "answers": {
+        "a": "After requirements specifications have been finalized ",
+        "b": "During the period when requirements specifications are prepared ",
+        "c": "Before the final requirements specifications are done",
+        "d": "Could be done at eny time"
+      },
+      
+      "correctAnswer": "c",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "A good requirement specification is one, which is",
+      "answers": {
+        "a": "Consistent ",
+        "b": "Complete",
+        "c": "Unambiguous",
+        "d": "All of the above "
+      },
+      
+      "correctAnswer": "d",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "Requirement specification is done",
+      "answers": {
+        "a": "After requirements are determined ",
+        "b": "Before requirements are determined ",
+        "c": "Simultaneously with requirements determination",
+        "d": "Independent of requirements determination "
+      },
+      
+      "correctAnswer": "a",
+      "difficulty": "beginner"
+    }
+  ]
+}
