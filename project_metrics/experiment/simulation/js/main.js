@@ -5,9 +5,7 @@ File Name: main.js
 Author: Prakriti Dhang */
 
 
-    /*var rangevalue =document.getElementById("rangepsize").value;
-    document.getElementById("optsize").value=rangevalue;
-    alert(rangevalue);*/
+    
 
     function updateSlider() {
         //var sliderDiv = document.getElementById("sliderAmount");
@@ -52,6 +50,9 @@ function subex(){
         document.getElementById("exer2").reset();
         document.getElementById("exer1").reset();
         document.getElementById("exer3").reset();
+        document.getElementById("ta").innerHTML="2.4";
+    document.getElementById("tb").innerHTML="1.05";
+    document.getElementById("tc").innerHTML="0.38";
         document.getElementById("cal").disabled=false;
         document.getElementById("dispviewbtn").disabled=false;
        
@@ -72,6 +73,7 @@ function subex(){
         document.getElementById("exer2").reset();
         document.getElementById("exer1").reset();
         document.getElementById("exer3").reset();
+        
         document.getElementById("viewsol").disabled=true;
         document.getElementById("dispviewbtn").disabled=false;
     }
@@ -122,7 +124,13 @@ function viewsolutionb(){
 }
 
  /* Exercise 1  project type choice*/
+
+ var typa, typb, typc, prjtsize,effort, tdev,eaf, effcorrec, tdvcorr, ndevolpers; 
+var effortb,effortc, efforta, effcorc;
+
+/* Calulation on change in project type in simulation page*/
 var ptype =document.getElementById("selecttype");
+
 function choicetype(){
 if(ptype.options[ptype.selectedIndex].value==0){
     document.getElementById("ta").innerHTML="2.4";
@@ -204,8 +212,7 @@ if(ptype.options[ptype.selectedIndex].value==2){
 }
 
 /* Exercise 1 */
-var typa, typb, typc, prjtsize,effort, tdev,eaf, effcorrec, tdvcorr, ndevolpers; 
-var effortb,effortc, efforta, effcorc;
+
 function cal1(){
    
     prjtsize =document.getElementById("inp1").value; //get project size value
@@ -253,6 +260,114 @@ document.getElementById("opt4").value=""; //tdevcorr
 alert("eaf and project size");
 }
 }
+ /* Calulation on change in project type in exercise page*/
+var ptypeex =document.getElementById("selecttypeex");
+
+function choicetypeex(){
+if(ptypeex.options[ptypeex.selectedIndex].value==0){
+    document.getElementById("ta").innerHTML="2.4";
+    document.getElementById("tb").innerHTML="1.05";
+    document.getElementById("tc").innerHTML="0.38";
+   
+   
+    typa = document.getElementById("ta").innerText; //a value type
+    typb = document.getElementById("tb").innerText; //b value type
+    typc = document.getElementById("tc").innerText; //c value type
+    
+    //Effort
+   effortb= ((parseFloat(prjtsize))**(parseFloat(typb))).toFixed(2);  // project^b
+    effort = (parseFloat(typa) * parseFloat(effortb)).toFixed(2); // typa * effortb
+   
+    effortc=((parseFloat(effort))**(parseFloat(typc))).toFixed(2); // effort^c
+    tdev= (2.5 * (parseFloat(effortc))).toFixed(2); // 2.5 *effort^c
+   
+   
+   effcorrec = ((parseFloat(effort)) *(parseFloat(eaf))).toFixed(2);  //effort * eaf
+   effcorc=((parseFloat(effcorrec))**(parseFloat(typc))).toFixed(2); //effortcorrect^c
+   tdvcorr = (2.5 * (parseFloat(effcorc))).toFixed(2); //2.5 * effortcorr ^c
+
+   ndevolpers = Math.round((parseFloat(effort))/(parseFloat(tdev))); //calculate no of developers
+   
+   document.getElementById("optd1").value=effort; //display effort
+   document.getElementById("optd2").value=tdev; //display tdev
+   document.getElementById("optd3").value=effcorrec; //effortcorrect
+   document.getElementById("optd4").value=tdvcorr; //tdevcorr
+   document.getElementById("optd5").value=ndevolpers; //no of developers
+
+  
+  
+}
+
+if(ptypeex.options[ptypeex.selectedIndex].value==1){
+    document.getElementById("ta").innerHTML="3";
+    document.getElementById("tb").innerHTML="1.12";
+    document.getElementById("tc").innerHTML="0.35";
+   
+    
+    typa = document.getElementById("ta").innerText; //a value type
+    typb = document.getElementById("tb").innerText; //b value type
+    typc = document.getElementById("tc").innerText; //c value type
+    
+    //Effort
+   effortb= ((parseFloat(prjtsize))**(parseFloat(typb))).toFixed(2);  // project^b
+    effort = (parseFloat(typa) * parseFloat(effortb)).toFixed(2); // typa * effortb
+   
+    effortc=((parseFloat(effort))**(parseFloat(typc))).toFixed(2); // effort^c
+    tdev= (2.5 * (parseFloat(effortc))).toFixed(2); // 2.5 *effort^c
+   
+   
+   effcorrec = ((parseFloat(effort)) *(parseFloat(eaf))).toFixed(2);  //effort * eaf
+   effcorc=((parseFloat(effcorrec))**(parseFloat(typc))).toFixed(2); //effortcorrect^c
+   tdvcorr = (2.5 * (parseFloat(effcorc))).toFixed(2); //2.5 * effortcorr ^c
+
+   ndevolpers = Math.round((parseFloat(effort))/(parseFloat(tdev))); //calculate no of developers
+   
+   document.getElementById("optd1").value=effort; //display effort
+   document.getElementById("optd2").value=tdev; //display tdev
+   document.getElementById("optd3").value=effcorrec; //effortcorrect
+   document.getElementById("optd4").value=tdvcorr; //tdevcorr
+   document.getElementById("optd5").value=ndevolpers; //no of developers
+
+  
+   
+}
+if(ptypeex.options[ptypeex.selectedIndex].value==2){
+    document.getElementById("ta").innerHTML="3.6";
+    document.getElementById("tb").innerHTML="1.2";
+    document.getElementById("tc").innerHTML="0.32";
+   
+    typa = document.getElementById("ta").innerText; //a value type
+        typb = document.getElementById("tb").innerText; //b value type
+        typc = document.getElementById("tc").innerText; //c value type
+        
+        //Effort
+       effortb= ((parseFloat(prjtsize))**(parseFloat(typb))).toFixed(2);  // project^b
+        effort = (parseFloat(typa) * parseFloat(effortb)).toFixed(2); // typa * effortb
+       
+        effortc=((parseFloat(effort))**(parseFloat(typc))).toFixed(2); // effort^c
+        tdev= (2.5 * (parseFloat(effortc))).toFixed(2); // 2.5 *effort^c
+       
+       
+       effcorrec = ((parseFloat(effort)) *(parseFloat(eaf))).toFixed(2);  //effort * eaf
+       effcorc=((parseFloat(effcorrec))**(parseFloat(typc))).toFixed(2); //effortcorrect^c
+       tdvcorr = (2.5 * (parseFloat(effcorc))).toFixed(2); //2.5 * effortcorr ^c
+
+       ndevolpers = Math.round((parseFloat(effort))/(parseFloat(tdev))); //calculate no of developers
+       
+       document.getElementById("optd1").value=effort; //display effort
+       document.getElementById("optd2").value=tdev; //display tdev
+       document.getElementById("optd3").value=effcorrec; //effortcorrect
+       document.getElementById("optd4").value=tdvcorr; //tdevcorr
+       document.getElementById("optd5").value=ndevolpers; //no of developers
+
+  
+}
+}
+
+
+
+
+
  /* Exercise 2 */
 function calculate2(){
  /* Correct answers operaters */

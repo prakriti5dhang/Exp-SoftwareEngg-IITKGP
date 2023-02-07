@@ -49,7 +49,7 @@ function viewsolutionb(){
 }
 
 function solview(){
-
+  document.getElementById("show_result1").style.display="block";
 
     
     document.getElementById("viewsol").disabled=true;
@@ -62,7 +62,7 @@ newCheckLabel.setAttribute('for', newCheckBoxID);
 let labelTextNode = document.createTextNode(inpt1);
 newCheckLabel.appendChild(labelTextNode);
 newLi.appendChild(newCheckLabel);*/
-let  inpt1;
+var  inpt1, arract=[];
 function addbtnt1(){
 let  newLi, newdiv;
 inpt1=document.getElementById("inp1").value;
@@ -78,6 +78,7 @@ inpt1=document.getElementById("inp1").value;
   var newIconbtn = document.createElement("img");
   newIconbtn.setAttribute("src","./images/remove.png");
   newIconbtn.setAttribute("onclick", "removerowuc(this)");
+  newIconbtn.setAttribute("id","btnremove");
   newIconbtn.setAttribute("style","cursor:pointer;");
 
   //rbtn.appendChild(newIconbtn);   
@@ -93,12 +94,12 @@ newdiv.appendChild(newIconbtn);
         // this just makes sure a user cant enter in a blank value
   
   if (inpt1 == "") {
-    alert("Please Enter Noun/Noun Phrase Before Click Add Button");
+    alert("Please Enter Actor from the given problem statement before clicking Add Button");
   } else {
 
   document.getElementById('actord').appendChild(newLi);
   document.getElementById("inp1").value="";
-
+ //arract.push(inpt1);
 /* Actor = Select option from the dropdown */
 let newOptionID;
 newOptionID = 'newOption_' + inpt1;
@@ -134,7 +135,7 @@ select2.appendChild(newOption2);
 
 }
  /*************************************Function for Table 2***********************************************/  
-let  inpt2;
+let  inpt2, arruc=[];;
  
  function addbtnt2() {
     
@@ -150,6 +151,7 @@ let  inpt2;
 
   var newIconbtn = document.createElement("img");
   newIconbtn.setAttribute("src","./images/remove.png");
+  newIconbtn.setAttribute("id","btnremove");
   newIconbtn.setAttribute("onclick", "removerowuc(this)");
   newIconbtn.setAttribute("style","cursor:pointer;");
 
@@ -172,7 +174,7 @@ let  inpt2;
   
     document.getElementById('usecased').appendChild(newLi);
     document.getElementById("inp2").value="";
-   
+    //arruc.push(inpt2);
    
     /* Use Case=Select option from the dropdown  */
   let newOptionID;
@@ -235,18 +237,21 @@ select1.appendChild(newOption1);
 
    
      /*************************************Function for Table 3***********************************************/  
-
+     var objselrel,dobjrel,objsel1, dobj1,objsel2,dobj2,inpt3;
+     var arrrel=[];
+     var arrlbl=[];
      function addbtnt3(){
-      var objsel1= document.getElementById("selectactuc1");
-      var dobj1 =objsel1.options[objsel1.selectedIndex].value;
+       objsel1= document.getElementById("selectactuc1");
+       dobj1 =objsel1.options[objsel1.selectedIndex].value;
        //alert(dobj1);
-       var objsel2= document.getElementById("selectactuc2");
-       var dobj2 =objsel2.options[objsel2.selectedIndex].value;
+       objsel2= document.getElementById("selectactuc2");
+       dobj2 =objsel2.options[objsel2.selectedIndex].value;
         //alert(dobj2);
-        var objselrel= document.getElementById("selectrel");
-        var dobjrel =objselrel.options[objselrel.selectedIndex].value;
+        objselrel= document.getElementById("selectrel");
+        dobjrel =objselrel.options[objselrel.selectedIndex].value;
          //alert(dobjrel);
-  var inpt3=document.getElementById("labelt3i").value;
+  inpt3=document.getElementById("labelt3i").value;
+  
   //alert(inpt3);
   var rbtn=document.createElement("button");
   rbtn.setAttribute("id", "removebtn");
@@ -258,7 +263,7 @@ select1.appendChild(newOption1);
   newIconbtn.setAttribute("class", "bi bi-dash-circle");
        rbtn.appendChild(newIconbtn);   
 
-if(((dobj1 == "user")|| (dobj1 == "User")|| (dobj1 == "student") ||((dobj1 == "member"))) && (dobjrel == "Association") && ((dobj2 == "issue")) ){
+if(((dobj1 == "user")|| (dobj1 == "User")|| (dobj1 == "student") ||((dobj1 == "member"))) && (dobjrel == "Association") && ((dobj2 == "issue") || (dobj2 == "issue book")) ){
   var tr = document.createElement('tr');
   tr.setAttribute("id","t5uc");
   document.getElementById('tbodytbl5').appendChild(tr);
@@ -290,6 +295,7 @@ if(((dobj1 == "user")|| (dobj1 == "User")|| (dobj1 == "student") ||((dobj1 == "m
   tr.appendChild(td5);
   document.getElementById('tbodytbl5').appendChild(tr);
 
+ 
 }
 
 if(((dobj1 == "user")|| (dobj1 == "User")|| (dobj1 == "student") ||((dobj1 == "member"))) && (dobjrel == "Association") && ((dobj2 == "return")) ){
@@ -453,104 +459,34 @@ if(((dobj1 == "issue")|| (dobj1 == "verify")) && (dobjrel !== "Include") && ((do
      function removerow(btndel) {
       if (typeof(btndel) == "object") {
           $(btndel).closest("tr").remove();
+          
       } else {
           return false;
       }
   }
-
+ 
+ var x = document.getElementById("selectactuc1");
   function removerowuc(btndel) {
     if (typeof(btndel) == "object") {
         $(btndel).closest("li").remove();
+       // x.remove(typeof(btndel));
+       
     } else {
         return false;
     }
+    
+    
 }
 
+/*
+
+document.getElementById("btnremove").addEventListener("click",function() {
+  const opt  = select.options[select.selectedIndex];
+  if (opt) opt.remove()
+})*/
 
 
 
-
-
-
-/********************************************************** Function for Table 7*****************************************************************/
-
-var inpt3;
-function addbtnt7(){
-     inpt3 =document.getElementById("inp3").value;
-     alert(inpt3);
-     var checkedvaluet7= document.querySelector('input[type=checkbox][name=attricheck]:checked').value;
-     alert(checkedvaluet7);
- if((inpt3=="person") && ((checkedvaluet7 == "Name") ||(checkedvaluet7 == "Address")||(checkedvaluet7 == "Height")||(checkedvaluet7 == "Weight"))){
-  var tr = document.createElement('tr');
-  tr.setAttribute("id","t8class1");
-  document.getElementById('tbodytbl8').appendChild(tr);
-  var td = document.createElement('td');
-  var td2=document.createElement("td");
-  var tdval=document.createTextNode(inpt3);
-  var tdval2=document.createTextNode(checkedvaluet7);
- // tbody.appendChild(tr);
-  
-  var ult8=document.createElement("ul");
- var lit8= document.createElement("li");
-  
-  tr.appendChild(td);
-  tr.appendChild(td2);
-  td.appendChild(tdval);
-  
-  td2.appendChild(ult8);
-  ult8.appendChild(lit8);
-  lit8.appendChild(tdval2);
- 
-  
-  document.getElementById('t8class1').appendChild(tr);
-
- }
- else if((inpt3=="Employee") && ((checkedvaluet7 == "Name") ||(checkedvaluet7 == "Address"))){
-  var tr2 = document.createElement('tr');
-  tr2.setAttribute("id","t8class2");
-  document.getElementById('tbodytbl8').appendChild(tr);
-  var td2 = document.createElement('td');
-  var td12=document.createElement("td");
-  var tdval2=document.createTextNode(inpt3);
-  var tdval12=document.createTextNode(checkedvaluet7);
- // tbody.appendChild(tr);
-  
-  var ult8=document.createElement("ul");
- var lit8= document.createElement("li");
-  
-  tr2.appendChild(td2);
-  tr2.appendChild(td12);
-  td2.appendChild(tdval2);
-  
-  td12.appendChild(ult8);
-  ult8.appendChild(lit8);
-  lit8.appendChild(tdval12);
- 
-  
-  document.getElementById('t8class2').appendChild(tr);
- }
- else{
-
- }
-
-
-     
-
-
-     
-}
-
-
-
-
-
-
-/********************************************************** Function for Top Level Classes*****************************************************************/
-
-function btntlc(){
-    document.getElementById("t10class").innerHTML=inpt3;
-    document.getElementById("t10obj").innerHTML=inpt1;
-}
 
 
 
@@ -569,3 +505,312 @@ function btntlc(){
     }*/
 
 // //document.getElementById("tbl2").rows[1].cells[0].innerHTML = inpt1;
+var paper;
+window.onresize = function(event) {
+  paper.setDimensions($('#ucdiagram1').width());
+  paper.setDimensions($('#ucdiagram1').height());
+  paper.scaleContentToFit({minScaleX: 1, minScaleY: 1, maxScaleX: 1 , maxScaleY: 1});
+
+};
+var arractor=[];
+var arrreltyp =[];
+var arrucase=[];
+var lblarr = [];
+
+
+
+function drawbtnex1(){
+ 
+
+  var myTab = document.getElementById('tbl5');
+  let indexc1 = document.getElementById('froma').cellIndex;
+  let indexc2 = document.getElementById('reltyp').cellIndex; 
+  let indexc3 = document.getElementById('toa').cellIndex; 
+  let indexc4 = document.getElementById('lbl').cellIndex;
+
+        // LOOP THROUGH EACH ROW OF THE TABLE AFTER HEADER.
+        for (i = 1; i < myTab.rows.length; i++) {
+
+            // GET THE CELLS COLLECTION OF THE CURRENT ROW.
+            var objCellsa = myTab.rows.item(i).cells;
+
+            // LOOP THROUGH EACH CELL OF THE CURRENT ROW TO READ CELL VALUES.
+            for (var j = indexc1; j <= indexc1; j++) {
+               var ex1actor= objCellsa.item(j).innerText;
+            }
+              arract.push(ex1actor);
+          }
+
+          console.log(arract);
+         
+         
+             // alert(arract);
+             for (r = 1; r < myTab.rows.length; r++) {
+
+              // GET THE CELLS COLLECTION OF THE CURRENT ROW.
+              var objCellsr = myTab.rows.item(r).cells;
+  
+             for (var k = indexc2; k <= indexc2; k++) {
+              var ex1rel= objCellsr.item(k).innerText;
+          }
+         
+          arrrel.push(ex1rel);
+        }
+        console.log(arrrel);
+    
+      
+        for (u = 1; u < myTab.rows.length; u++) {
+
+          // GET THE CELLS COLLECTION OF THE CURRENT ROW.
+          var objCellsu = myTab.rows.item(u).cells;
+          for (var l = indexc3; l <= indexc3; l++) {
+            var ex1uc=objCellsu.item(l).innerText;
+        }
+        arruc.push(ex1uc);
+        }
+        console.log(arruc);
+       
+        for (lb = 1; lb < myTab.rows.length; lb++) {
+
+          // GET THE CELLS COLLECTION OF THE CURRENT ROW.
+          var objCellsl = myTab.rows.item(lb).cells;
+           for (var m = indexc4; m <= indexc4; m++) {
+            var ex1lb= objCellsl.item(m).innerText;
+        }
+       arrlbl.push(ex1lb);
+      }
+        
+      console.log(arrlbl);
+       
+        
+        /*function removeDuplicates(arractor) {
+          
+          return arractor.filter((item,
+              index) => arract.indexOf(item) === index);
+      }
+      console.log(removeDuplicates(arract));*/
+      
+      function removeDuplicatesact(arract) {
+       
+        arract.forEach(element => {
+            if (!arractor.includes(element)) {
+              arractor.push(element);
+            }
+        });
+        return arractor;
+    }
+    function removeDuplicatesrel(arrrel) {
+       
+      arrrel.forEach(element => {
+          if (!arrreltyp.includes(element)) {
+            arrreltyp.push(element);
+          }
+      });
+      return arrreltyp;
+  }
+  function removeDuplicatesuc(arruc) {
+       
+    arruc.forEach(element => {
+        if (!arrucase.includes(element)) {
+          arrucase.push(element);
+        }
+    });
+    return arrucase;
+}
+
+function removeDuplicateslbl(arrlbl) {
+       
+  arrlbl.forEach(element => {
+      if (!lblarr.includes(element)) {
+        lblarr.push(element);
+      }
+  });
+  return lblarr;
+}
+
+    console.log(removeDuplicatesact(arract));
+    console.log(removeDuplicatesrel(arrrel));
+    console.log(removeDuplicatesuc(arruc));
+    console.log(removeDuplicateslbl(arrlbl));
+
+    
+
+      console.log(arractor);
+      console.log(arrreltyp);
+      console.log(arrucase);
+      console.log(lblarr);
+    
+     
+
+      
+   
+  var namespace = joint.shapes;
+
+        var graph = new joint.dia.Graph({}, { cellNamespace: namespace });
+
+        paper = new joint.dia.Paper({
+            el: document.getElementById('ucdiagram1'),
+            model: graph,
+            //x: 0,
+            //y: 0,
+            //width: 600,
+            //height: 500, // height had to be increased
+           
+            background: {
+                color: 'rgba(0, 255, 0, 0.3)'
+            },
+            
+            cellViewNamespace: namespace
+        });
+        paper.setDimensions($('#ucdiagram1').width());
+        paper.setDimensions($('#ucdiagram1').height());
+        paper.scaleContentToFit({minScaleX: 1, minScaleY: 1, maxScaleX: 1 , maxScaleY: 1});
+
+        var actor1 = new joint.shapes.standard.Image();
+        actor1.resize(120, 90);
+        actor1.position(-6,8);
+        //actor1.position(103, 15);
+        actor1.attr('root/title', 'joint.shapes.standard.BoarderedImage');
+        actor1.attr('label/text', arractor[0]);
+        actor1.attr('label/fontSize', 16);
+        actor1.attr('body/strokeWidth', 2);
+        actor1.attr('border/rx', 2);
+        actor1.attr('image/xlinkHref', 'images/actor.png');
+        actor1.addTo(graph);
+
+          
+         
+
+  
+        
+ /* Actor 2 */
+
+ var actor2 = new joint.shapes.standard.Image();
+ actor2.resize(120, 90);
+ actor2.position(83, 8);
+ //actor2.position(316, 15);
+ actor2.attr('root/title', 'joint.shapes.standard.BoarderedImage');
+ actor2.attr('label/text', arractor[1]);
+ actor2.attr('label/fontSize', 16);
+ actor2.attr('body/strokeWidth', 2);
+ actor2.attr('border/rx', 2);
+ actor2.attr('image/xlinkHref', 'images/actor.png');
+ actor2.addTo(graph);
+       
+ /* Use Case 1 */
+        var uc1 = new joint.shapes.standard.Ellipse();
+        uc1.position(112, 180);
+        uc1.position(7, 254);
+        uc1.resize(100, 40);
+        uc1.attr({
+            body: {
+                fill: '#ffffff',
+                rx: 20,
+                ry: 20,
+                strokeWidth: 2
+            },
+            label: {
+                text: arrucase[0],
+                fill: 'black',
+                fontSize: 16,
+                
+            }
+        });
+        uc1.addTo(graph);
+/* Use Case 2 */
+        var uc2 = new joint.shapes.standard.Ellipse();
+        uc2.position(325, 180);
+        uc2.position(111, 254);
+        uc2.resize(100, 40);
+        uc2.attr({
+            body: {
+                fill: '#ffffff',
+                rx: 20,
+                ry: 20,
+                strokeWidth: 2
+            },
+            label: {
+                text: arrucase[1],
+                fill: 'black',
+                fontSize: 16
+            }
+        });
+        uc2.addTo(graph);
+/* Use Case 3 */
+        var uc3 = new joint.shapes.standard.Ellipse();
+        uc3.position(115, 320);
+        uc3.position(10, 420);
+        uc3.resize(100, 40);
+        uc3.attr({
+            body: {
+                fill: '#ffffff',
+                rx: 20,
+                ry: 20,
+                strokeWidth: 2
+            },
+            label: {
+                text: arrucase[2],
+                fill: 'black',
+                fontSize: 16
+            }
+        });
+        uc3.addTo(graph);
+
+
+        var link1 = new joint.shapes.standard.Link();
+        
+        link1.source(actor1);
+        link1.target(uc1);
+       link1.addTo(graph);
+
+        var link2 = new joint.shapes.standard.Link();
+        
+        link2.source(actor1);
+        link2.target(uc2);
+        link2.addTo(graph);
+
+        var link3 = new joint.shapes.standard.Link();
+        
+        link3.source(actor2);
+        link3.target(uc1);
+        link3.addTo(graph);
+
+        var link4 = new joint.shapes.standard.Link();
+        
+        link4.source(actor2);
+        link4.target(uc2);
+        link4.addTo(graph);
+       
+        var link5 = new joint.shapes.standard.Link();
+        link5.source(uc1);
+        link5.target(uc3);
+        link5.appendLabel({
+          attrs: {
+              text: {
+                  text: arrreltyp[1],
+                  fontSize: 16
+              }
+              
+        }
+      });
+        link5.attr({
+          line: {
+            stroke: 'blue',
+            strokeWidth: 2,
+            strokeDasharray: '4 2',
+      }
+        });
+        link5.addTo(graph);
+
+        
+
+       
+
+/*var c = document.getElementById("uc1");
+var ctx = c.getContext("2d");
+ctx.beginPath();
+ctx.ellipse(100, 100, 50, 75, Math.PI / 4, 0, 2 * Math.PI);
+ctx.font = "30px Arial";
+ctx.strokeText(inpt1,10,50);*/
+
+}
